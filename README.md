@@ -3,6 +3,8 @@ dockerfiles
 
 My docker files
 
+1. Auto-build on docker hub
+
 1. `config_latest_docker.sh` is the script used to set docker repository source and get latest version in ubuntu.
 
 1. `./base/` folder contains the  base dockerfile. Use it to build my base images.
