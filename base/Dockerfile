@@ -25,9 +25,10 @@ RUN mkdir -p /var/run/sshd
 RUN mkdir -p /var/log/supervisor
 ADD ./base-supervisord.conf /etc/supervisor/conf.d/base.conf
 ADD ./docker-entrypoint.sh /usr/bin/docker-entrypoint.sh
+RUN chmod +x /usr/bin/docker-entrypoint.sh
 
 # set root password
-echo 'root:123456' | chpasswd
+RUN echo 'root:123456' | chpasswd
 
 # expose ports
 EXPOSE      22 9001
