@@ -1,7 +1,7 @@
-dockerfiles-base
+dockerfiles
 ===========
 
-My base dockerfile
+My docker files
 
 1. `config_latest_docker.sh` is the script used to set docker repository source and get latest version in ubuntu.
 
