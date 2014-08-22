@@ -1,3 +1,3 @@
 #!/bin/sh
 
-/usr/bin/supervisord 
+/usr/bin/supervisord -n
