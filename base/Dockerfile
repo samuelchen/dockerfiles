@@ -40,4 +40,4 @@ RUN hostname -i
 #ADD ./auto-start.sh /root/auto-start.sh
 #chmod +x /root/auto-start.sh
 
-ENTRY ["/usr/bin/docker-entrypoint.sh"]
+ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
