@@ -1,0 +1,24 @@
+# Zookeeper
+#
+# VERSION   0.0.1
+
+FROM        samuelchen/base
+MAINTAINER  Samuel Chen <samuel.net@gmail.com>
+
+
+# install nginx
+RUN apt-get install -y nginx
+RUN service nginx start
+
+# setup supervisord
+RUN echo "[program:nginx]" > /etc/supervisor/conf.d/nginx.conf
+RUN echo "command=/usr/sbin/nginx " >> /etc/supervisor/conf.d/nginx.conf
+
+# expose port 2181
+EXPOSE      80
+
+# display info
+RUN echo "Port 80 is exposed"
+RUN hostname -i
+
+CMD ["tail", "-f", "/var/log/nginx/access.log"]
