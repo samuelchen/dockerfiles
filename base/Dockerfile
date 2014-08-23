@@ -35,12 +35,12 @@ RUN mkdir -p /var/log/supervisor
 ADD base-supervisord.conf /etc/supervisor/conf.d/base.conf
 
 # config sshd
-RUN sed "s/^PermitRootLogin/\#PermitRootLogin/g" /etc/ssh/sshd_config
+RUN sed "s/^PermitRootLogin/\#PermitRootLogin/g" /etc/ssh/sshd_config > /etc/ssh/sshd_config
 RUN echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 #COPY sshd_config /etc/ssh/sshd_config
 
-# expose ports
-EXPOSE  22 9001	# ssh, supervisord http
+# expose ports (ssh, supervisord http)
+EXPOSE  22 9001	
 
 # entrypoint script
 ADD ./docker-entrypoint.sh /usr/bin/docker-entrypoint.sh
