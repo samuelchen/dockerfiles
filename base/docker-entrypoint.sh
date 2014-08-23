@@ -1,3 +1,4 @@
 #!/bin/sh
 
-/usr/bin/supervisord -n
+# -n (nodaemon) will pass by CMD command in dockerfile
+/usr/bin/supervisord $1
